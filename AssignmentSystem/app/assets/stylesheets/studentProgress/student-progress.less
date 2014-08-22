@@ -1,0 +1,112 @@
+@import "../libs/lesshat-prefixed";
+@import "../custom-mixins";
+
+@progress-row-height: 30px;
+@row-spacing: 20px;
+
+.user-info {
+  height: 128px;
+  margin-bottom: @row-spacing;
+  .avatar img {
+    width: 128px;
+    height: 128px;
+    text-align: center;
+    .lh-border-radius(@gv-border-radius);
+  }
+  ul{
+    margin-left: 10px;
+    list-style: none;
+    padding: 0;
+  }
+  li{
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}//end user info
+
+@media(max-width:767px){
+  .user-info{height: initial; text-align: center;}
+}
+
+.student-assignment-progress {
+
+  .progress {
+    margin-bottom: @row-spacing;
+    height: @progress-row-height;
+  }
+
+  .cm-starred-progress-bar(-26px);
+
+  .titled-progress-bar {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    h3 {
+      position: absolute;
+      margin: 0;
+      top: 6px;
+      left: 10px;
+      font-size: 16px;
+      color: white;
+      .cm-text-shadow;
+      font-weight: 400;
+    }
+  }// end titled progress bar
+
+  .problem-progress-box-wrapper{
+    padding-right: 5px;
+    float: left;
+    margin-bottom: @row-spacing;
+  }
+  .problem-progress-box{
+    height: @progress-row-height;
+    line-height: @progress-row-height;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    background-color: @gv-background-gray;
+    .cm-unearned-inset;
+    .lh-border-radius(@gv-border-radius);
+    text-align: center;
+    &.earned{
+      color: white;
+      .cm-text-shadow;
+      background-color: @gv-assignment-progress-color;
+      .lh-box-shadow(none);
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }//end problem progress box
+
+}//end student-assignment-progress
+
+.student-achievements {
+  .achievement-wrapper{
+    position: relative;
+    float: left;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    width: 19%;
+    padding-bottom: 19%;
+    .achievement {
+      .lh-border-radius(@gv-border-radius);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: @gv-assignment-hover-color;
+      .lh-grayscale(100);
+      &.earned { .lh-grayscale(0); }
+      img{
+        width: 100%;
+        height: 100%;
+        .lh-border-radius(@gv-border-radius);
+      }
+    }
+
+
+  }
+}

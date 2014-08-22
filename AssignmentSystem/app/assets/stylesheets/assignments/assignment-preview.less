@@ -1,0 +1,63 @@
+@import "../libs/lesshat-prefixed";
+@import "../custom-mixins";
+@import "star-rating";
+
+@assignment-preview-height: 110px;
+
+.boxshape {
+  height: @assignment-preview-height;
+  padding: 15px;
+  margin-bottom: 15px;
+  .lh-border-radius(@gv-border-radius);
+}
+
+.assignment-preview {
+
+  .lh-user-select(none);
+
+  .locked-assignment {
+    .boxshape;
+    cursor: default;
+    background-color: lightgrey;
+    color: grey;
+    text-align: center;
+
+    i { font-size: 65px; }
+    p {
+      margin: -5px 0 0 0;
+      .lh-user-select(none);
+    }
+  }
+
+  a {
+    .boxshape;
+    display: block;
+    background-color: @gv-assignment-color;
+    text-decoration: none;
+    position: relative;
+    color: black;
+    .lh-transition(background-color, 500ms);
+
+    &:hover {
+      background-color: @gv-assignment-hover-color;
+      .lh-transition(background-color, 500ms);
+    }
+
+    .assignment-text {
+      height: 48px;
+      margin-bottom: 10px;
+    }
+
+    .cm-starred-progress-bar(-6px);
+
+  }
+
+  .progress {
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+

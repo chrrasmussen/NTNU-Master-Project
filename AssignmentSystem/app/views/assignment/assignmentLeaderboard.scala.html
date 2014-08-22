@@ -1,0 +1,38 @@
+@(assignmentID : String)
+<div class="assignment-leaderboard">
+    <h1>Assignment @assignmentID score</h1>
+    @views.html.bitsAndPieces.starRating(50)
+
+    <dl>
+        <dt>Your base score</dt>
+        <dd>75</dd>
+
+        <dt>Your bonus points</dt>
+        <dd>22</dd>
+
+        <dt><strong>Your total score</strong></dt>
+        <dd><strong>97</strong></dd>
+    </dl>
+
+    <h2>Assignment @assignmentID leaderboard</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="assingment-lb-place text-center">#</th>
+                <th class="assingment-lb-score text-center">Score</th>
+                <th class="assingment-lb-name">User</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(n <- 1 to 10){
+                <tr>
+                    <td class="text-center">@n</td>
+                    <td class="text-center">@{Math.round( 153-n*7 - 3*Math.random() )}</td>
+                    <td>Mark with the long name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>

@@ -1,0 +1,66 @@
+@import "../libs/lesshat-prefixed";
+@import "../custom-mixins";
+
+@row-height: 46px;
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+
+  .leaderboard-entry {
+
+    background-color: @gv-background-gray;
+
+    margin-bottom: 15px;
+    *{
+      float: left;
+      line-height: @row-height;
+      cursor: default;
+    }
+
+    .lh-border-top-right-radius(@gv-border-radius);
+    .lh-border-bottom-right-radius(@gv-border-radius);
+
+    .position {
+      .lh-border-top-left-radius(@gv-border-radius);
+      .lh-border-bottom-left-radius(@gv-border-radius);
+      height: @row-height;
+      min-width: @row-height/2;
+      padding: 0px 4px;
+      background-color: #333;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+     }
+
+    .trend {
+
+    }
+
+    .avatar {
+      height: @row-height;
+      width: @row-height;
+      background-color: lightblue;
+      img{
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .name-and-score {
+      .lh-calc(width, ~'100% - 96px'); //2x row-height
+      font-size: 16px;
+      font-family: "Open Sans";
+      font-weight: 300;
+      margin-left: 10px;
+      .cm-ellipsis;
+    }
+
+    &:after {
+      .cm-clearfix;
+    }
+
+  }//end leaderboard entry
+
+}//end leaderboard list

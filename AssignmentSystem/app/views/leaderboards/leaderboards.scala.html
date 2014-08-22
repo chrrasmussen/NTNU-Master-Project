@@ -1,0 +1,41 @@
+@main("Leaderboards"){
+    <div class="col-md-6">
+        <h1>Top scores</h1>
+        <ol class=leaderboard-list>
+        @for(n <- 1 to 10){
+            <li class="leaderboard-entry">
+                <div class="position">@n</div>
+                <!-- <div class="trend"></div> -->
+                <div class="avatar"><img src="src" alt="Avatar image"></div>
+                <div class="name-and-score"></div>
+            </li>
+        }
+        </ol>
+    </div>
+
+    <div class="col-md-6">
+        <h1>This week's assignment</h1>
+        <ol class=leaderboard-list>
+        @for(n <- 1 to 10){
+            <li class="leaderboard-entry">
+                <div class="position">@n</div>
+                    <!-- <div class="trend"></div> -->
+                <div class="avatar"><img src="src" alt="Avatar image"></div>
+                <div class="name-and-score"></div>
+            </li>
+        }
+        </ol>
+    </div>
+
+    <script type="text/javascript" src="@routes.Assets.at("javascript/plugins/faker.js")"></script>
+    <script>
+        $(".leaderboard-entry").each(function(){
+            $(this).find(".avatar img").attr('src', Faker.Image.avatar() );
+            $(this).find(".name-and-score").text( Faker.Name.firstName() +" "+ Faker.Name.lastName() + " (" + Math.round( 153-$(this).index()*7 - 3*Math.random() ) + " points)" )
+        });
+    </script>
+}
+
+<!-- fill list with fake data -->
+
+

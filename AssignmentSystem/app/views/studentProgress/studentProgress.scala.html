@@ -1,0 +1,38 @@
+@main("My progress"){
+    <div class="col-lg-2 col-md-2 col-sm-2 user-info">
+        <div class="avatar"><img src="src" alt="Avatar image"></div>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-10 user-info">
+        <ul>
+            <li class="name"></li>
+            <li class="score">Total score: @{142+Math.round( Math.random()*349 )} </li>
+            <li class="leaderboard-position">Leaderboard position: @{50+Math.round( Math.random()*200 )} </li>
+        </ul>
+    </div>
+
+    <div class="student-assignment-progress">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h1>Assignments</h1>
+            @views.html.studentProgress.assignmentsProgress()
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h1>Problems</h1>
+            @views.html.studentProgress.problemProgress()
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 student-achievements">
+        <h1>Achievements</h1>
+        @views.html.studentProgress.achievements()
+    </div>
+
+    <script type="text/javascript" src="@routes.Assets.at("javascript/plugins/faker.js")"></script>
+    <script>
+        $(".user-info").find(".avatar img").attr('src', Faker.Image.avatar() );
+        $(".user-info").find(".name").text( Faker.Name.firstName() +" "+ Faker.Name.lastName());
+        $(".achievement img").each(function(){
+            $(this).attr('src', Faker.Image.abstractImage() );
+        });
+    </script>
+
+}

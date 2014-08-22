@@ -1,0 +1,25 @@
+@*(assignments : java.util.List[no.ntnu.assignmentsystem.services.AssignmentView])*@
+
+@main("Assignments"){
+    <div class="col-lg-9">
+        <div class="row">
+            @for(n <- 1 to 12){
+                @if(n < 7){
+                    @views.html.assignment.assignmentPreview(""+n, false)
+                }else{
+                    @views.html.assignment.assignmentPreview(""+n, true)
+                }
+            }
+        </div>
+
+    </div>
+    <div class="col-lg-3 visible-lg">
+        @views.html.assignment.assignmentLeaderboard("X")
+    </div>
+
+    <script type="text/javascript" src="@routes.Assets.at("javascript/star-rating.js")"></script>
+
+    @*for(assignment <- assignments){
+        @assignment.getTitle
+    }*@
+}

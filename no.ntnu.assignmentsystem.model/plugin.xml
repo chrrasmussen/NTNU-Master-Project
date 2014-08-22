@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated model -->
+      <package
+            uri="http://assignmentsystem.ntnu.no/model/1.0"
+            class="no.ntnu.assignmentsystem.model.ModelPackage"
+            genModel="model/model.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated services -->
+      <package
+            uri="http://assignmentsystem.ntnu.no/services/1.0"
+            class="no.ntnu.assignmentsystem.services.ServicesPackage"
+            genModel="model/services.genmodel"/>
+   </extension>
+
+</plugin>

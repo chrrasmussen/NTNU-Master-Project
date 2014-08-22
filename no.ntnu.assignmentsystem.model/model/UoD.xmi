@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ASCII"?>
+<no.ntnu.assignmentsystem:UoD
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:no.ntnu.assignmentsystem="http://assignmentsystem.ntnu.no/model/1.0"
+    xsi:schemaLocation="http://assignmentsystem.ntnu.no/model/1.0 model.ecore"
+    lastGlobalId="28">
+  <users id="8"
+      email="hal@idi.ntnu.no"
+      password="hal"/>
+  <users id="9"
+      email="davidas@stud.ntnu.no"
+      password="davidas"/>
+  <users id="10"
+      email="christir@stud.ntnu.no"
+      password="christir"/>
+  <users id="11"
+      email="randomTA@stud.ntnu.no"
+      password="randomTA"/>
+  <courses id="1"
+      title="Object-oriented programming with Java">
+    <assignments
+        id="2"
+        localId="1"
+        title="The basics">
+      <problems
+          xsi:type="no.ntnu.assignmentsystem:CodeProblem"
+          id="4"
+          localId="A"
+          title="State and Behavior - Account-problem"
+          maxPoints="25"
+          repoUrl="../no.hal.jex.collection"
+          mainImplementationFile="5">
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="5"
+            filePath="src/stateandbehavior/AccountProgram.java"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="7"
+            filePath="src/stateandbehavior/Account.java"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:TestFile"
+            id="6"
+            filePath="src-gen/stateandbehavior/AccountTest.java"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:JexTestFile"
+            id="12"
+            filePath="tests/stateandbehavior/Account.jextest"
+            packageName="stateandbehavior"/>
+      </problems>
+      <problems
+          xsi:type="no.ntnu.assignmentsystem:CodeProblem"
+          id="13"
+          localId="B"
+          title="State and Behavior - Digit-problem"
+          maxPoints="25"
+          repoUrl="../no.hal.jex.collection"
+          mainImplementationFile="14">
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="14"
+            filePath="src/stateandbehavior/DigitProgram.java"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="15"
+            filePath="src/stateandbehavior/Digit.java"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:TestFile"
+            id="16"
+            filePath="tests/stateandbehavior/DigitTest.java"
+            packageName="stateandbehavior"/>
+      </problems>
+      <problems
+          xsi:type="no.ntnu.assignmentsystem:CodeProblem"
+          id="17"
+          localId="C"
+          title="State and Behavior - LineEditor-problem"
+          maxPoints="50"
+          repoUrl="../no.hal.jex.collection"
+          mainImplementationFile="18">
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="18"
+            filePath="src/stateandbehavior/LineEditorProgram.java"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="19"
+            filePath="src/stateandbehavior/LineEditor.java"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:TestFile"
+            id="20"
+            filePath="src-gen/stateandbehavior/LineEditorTest.java"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:JexTestFile"
+            id="21"
+            filePath="tests/stateandbehavior/LineEditor.jextest"
+            packageName="stateandbehavior"/>
+      </problems>
+      <problems
+          xsi:type="no.ntnu.assignmentsystem:CodeProblem"
+          id="22"
+          localId="D"
+          title="Title&#x9;State and Behavior - Location-problem"
+          maxPoints="25"
+          repoUrl="../no.hal.jex.collection"
+          mainImplementationFile="23">
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="23"
+            filePath=""
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="24"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:TestFile"
+            id="25"
+            packageName="stateandbehavior"/>
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:JexTestFile"
+            id="26"
+            packageName="stateandbehavior"/>
+      </problems>
+      <problems
+          xsi:type="no.ntnu.assignmentsystem:CodeProblem"
+          id="27"
+          localId="E"
+          title="Test Problem"
+          maxPoints="100"
+          repoUrl="../no.hal.jex.collection"
+          mainImplementationFile="28">
+        <sourceCodeFiles
+            xsi:type="no.ntnu.assignmentsystem:ImplementationFile"
+            id="28"
+            filePath="src/assignmentsystem/Main.java"
+            packageName="assignmentsystem"/>
+      </problems>
+    </assignments>
+    <participants
+        xsi:type="no.ntnu.assignmentsystem:Student"
+        user="9"
+        screenName="David">
+      <submissions
+          xsi:type="no.ntnu.assignmentsystem:CodeSubmission"
+          problem="4">
+        <evaluation
+            evaluatedBy="//@courses.0/@participants.2"/>
+      </submissions>
+    </participants>
+    <participants
+        xsi:type="no.ntnu.assignmentsystem:Student"
+        user="10"
+        screenName="Christian"/>
+    <participants
+        xsi:type="no.ntnu.assignmentsystem:Staff"
+        user="8"
+        screenName="Hallvard"/>
+    <participants
+        xsi:type="no.ntnu.assignmentsystem:Staff"
+        user="11"
+        screenName="RandomTA"/>
+  </courses>
+</no.ntnu.assignmentsystem:UoD>

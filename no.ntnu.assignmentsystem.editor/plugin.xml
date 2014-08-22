@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="BackgroundApplication"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="no.ntnu.assignmentsystem.editor.BackgroundApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+     point="org.eclipse.ui.commands">
+      <command
+        name="Connect..."
+        id="no.ntnu.assignmentsystem.editor.commands.connectCommand">
+      </command>
+      <command
+            id="no.ntnu.assignmentsystem.editor.commands.testCommand"
+            name="Test">
+      </command>
+   </extension>
+   <extension
+     point="org.eclipse.ui.handlers">
+      <handler
+        commandId="no.ntnu.assignmentsystem.editor.commands.connectCommand"
+        class="no.ntnu.assignmentsystem.editor.ConnectHandler">
+      </handler>
+      <handler
+            class="no.ntnu.assignmentsystem.editor.TestHandler"
+            commandId="no.ntnu.assignmentsystem.editor.commands.testCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+  	 <menuContribution
+        locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+           label="Assignment System"
+           mnemonic="M"
+           id="no.ntnu.assignmentsystem.editor.menus.assignmentSystemMenu">
+            <command
+              commandId="no.ntnu.assignmentsystem.editor.commands.connectCommand"
+              mnemonic="S"
+              id="no.ntnu.assignmentsystem.editor.menus.connectCommand">
+            </command>
+            <command
+                  commandId="no.ntnu.assignmentsystem.editor.commands.testCommand"
+                  mnemonic="S"
+                  id="no.ntnu.assignmentsystem.editor.menus.testCommand">
+            </command>
+         </menu>
+     </menuContribution>
+   </extension>
+
+</plugin>

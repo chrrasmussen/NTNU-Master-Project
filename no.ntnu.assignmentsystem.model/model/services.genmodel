@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/no.ntnu.assignmentsystem.model/src-gen" modelPluginID="no.ntnu.assignmentsystem.model"
+    forceOverwrite="true" modelName="Services" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>services.ecore</foreignModel>
+  <genPackages prefix="Services" basePackage="no.ntnu.assignmentsystem" disposableProviderFactory="true"
+      contentTypeIdentifier="" ecorePackage="services.ecore#/">
+    <genDataTypes ecoreDataType="services.ecore#//ActorRef"/>
+    <genClasses ecoreClass="services.ecore#//Services">
+      <genOperations ecoreOperation="services.ecore#//Services/getAssignments">
+        <genParameters ecoreParameter="services.ecore#//Services/getAssignments/userId"/>
+      </genOperations>
+      <genOperations ecoreOperation="services.ecore#//Services/getProblems">
+        <genParameters ecoreParameter="services.ecore#//Services/getProblems/userId"/>
+        <genParameters ecoreParameter="services.ecore#//Services/getProblems/assignmentId"/>
+      </genOperations>
+      <genOperations ecoreOperation="services.ecore#//Services/getProblem">
+        <genParameters ecoreParameter="services.ecore#//Services/getProblem/userId"/>
+        <genParameters ecoreParameter="services.ecore#//Services/getProblem/problemId"/>
+      </genOperations>
+      <genOperations ecoreOperation="services.ecore#//Services/getOverallLeaderboard"/>
+      <genOperations ecoreOperation="services.ecore#//Services/getAssignmentLeaderboard">
+        <genParameters ecoreParameter="services.ecore#//Services/getAssignmentLeaderboard/assignmentId"/>
+      </genOperations>
+      <genOperations ecoreOperation="services.ecore#//Services/getAchievements">
+        <genParameters ecoreParameter="services.ecore#//Services/getAchievements/userId"/>
+      </genOperations>
+      <genOperations ecoreOperation="services.ecore#//Services/createEditor">
+        <genParameters ecoreParameter="services.ecore#//Services/createEditor/userId"/>
+        <genParameters ecoreParameter="services.ecore#//Services/createEditor/problemId"/>
+      </genOperations>
+      <genOperations ecoreOperation="services.ecore#//Services/authenticate">
+        <genParameters ecoreParameter="services.ecore#//Services/authenticate/username"/>
+        <genParameters ecoreParameter="services.ecore#//Services/authenticate/password"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="services.ecore#//AssignmentView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AssignmentView/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AssignmentView/localId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AssignmentView/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AssignmentView/progress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AssignmentView/locked"/>
+    </genClasses>
+    <genClasses ecoreClass="services.ecore#//ProblemView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//ProblemView/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//ProblemView/localId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//ProblemView/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//ProblemView/editable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//ProblemView/progress"/>
+    </genClasses>
+    <genClasses ecoreClass="services.ecore#//ExtendedProblemView"/>
+    <genClasses ecoreClass="services.ecore#//CodeProblemView">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference services.ecore#//CodeProblemView/sourceCodeFiles"/>
+    </genClasses>
+    <genClasses ecoreClass="services.ecore#//SourceCodeFileView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//SourceCodeFileView/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//SourceCodeFileView/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//SourceCodeFileView/sourceCode"/>
+    </genClasses>
+    <genClasses ecoreClass="services.ecore#//LeaderboardEntryView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//LeaderboardEntryView/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//LeaderboardEntryView/screenName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//LeaderboardEntryView/score"/>
+    </genClasses>
+    <genClasses ecoreClass="services.ecore#//AchievementView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AchievementView/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AchievementView/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AchievementView/imageUrl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//AchievementView/earned"/>
+    </genClasses>
+    <genClasses ecoreClass="services.ecore#//StudentProfileView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//StudentProfileView/screenName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//StudentProfileView/totalScore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//StudentProfileView/leaderboardPosition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute services.ecore#//StudentProfileView/avatarUrl"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

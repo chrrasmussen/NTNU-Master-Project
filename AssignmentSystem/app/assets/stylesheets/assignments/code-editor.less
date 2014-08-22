@@ -1,0 +1,150 @@
+@import "../libs/lesshat-prefixed";
+@import "../custom-mixins";
+
+.ace-editor-instance { height: 350px; }
+
+.ace-editor-console  {
+  height: 100px;
+  padding: 5px 10px;
+  font-family: "Courier New";
+  border: 1px solid @gv-border-gray;
+  border-top: 0;
+  .lh-border-radius(0 0 3px 3px);
+  overflow-y: scroll;
+  margin-bottom: 15px;
+}
+
+.ace-editor-controls{
+  margin-bottom: 15px;
+}
+
+.maximized {
+  &#ace-editor-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+  }
+  .ace-editor-instance {
+    height: 70vh;
+    .lh-calc(height, ~'75vh - 45px');
+  }
+  .ace-editor-console {
+    height: 20vh;
+    .lh-calc(height, ~'25vh - 50px');
+  }
+  .ace-editor-controls {
+    padding: 0 15px;
+  }
+}
+
+#editor-header{
+  position: relative;
+}
+
+#java-class-tabs {
+  padding-left: 65px;
+  background-color: #ebebeb;
+  border: 1px solid @gv-border-gray;
+  border-bottom: 1px solid #9f9f9f;
+  height: 34px;
+  .lh-border-radius(3px 3px 0px 0px);
+  li{
+    margin-top: 5px;
+    a { padding: 3px 0px; }
+    .tab-underline {
+      margin: 0 7px;
+      &.warning { border-bottom: 1px dotted #ffbf00; }
+      &.error { border-bottom: 1px dotted red; }
+    }
+  }
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focus{
+  border: 1px solid #9f9f9f;
+  border-bottom-color: transparent;
+}
+
+.nav-tabs>li>a:hover {
+  background-color: white;
+  color: #555;
+  border: 1px solid #9f9f9f;
+  border-bottom-color: transparent;
+}
+
+.tab-content.bordered {
+  border: 1px solid @gv-border-gray;
+  border-top: 0;
+}
+
+//toolbar styling
+#editor-status {
+  color: #e74c3c;
+  position: absolute;
+  font-size: 12px;
+  left: 10px;
+  top: 11px;
+  &.ready {
+    color: #2ecc71;
+  }
+  &.running{
+    .running;
+  }
+}
+
+.editor-toolbar {
+  position: absolute;
+  font-size: 18px;
+  top: 3px;
+  right: 5px;
+  color: #555;
+  cursor: default;
+  .lh-user-select(none);
+  .toolbar-icon{
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    left: -75px;
+    top: 30px;
+  }
+}
+
+.ace_gutter-tooltip {
+  .lh-border-radius(@gv-border-radius)!important;
+}
+
+
+//spinner icon
+.running {
+  color: black;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 1000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 1000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-ms-keyframes spin { from { -ms-transform: rotate(0deg); }
+                      to   { -ms-transform: rotate(360deg); } }
+@-moz-keyframes spin {from { -moz-transform: rotate(0deg); }
+                      to   { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { from { -webkit-transform: rotate(0deg); }
+                          to   { -webkit-transform: rotate(360deg); } }
+@keyframes spin {         from { transform: rotate(0deg); }
+                          to   { transform: rotate(360deg); } }

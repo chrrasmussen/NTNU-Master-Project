@@ -1,0 +1,39 @@
+@(problem : no.ntnu.assignmentsystem.services.CodeProblemView)
+@import no.ntnu.assignmentsystem.services.SourceCodeFileView
+
+<div id="ace-editor-wrapper">
+
+    <div id="editor-header">
+        <i class="fa fa-circle" id="editor-status"></i>
+        <ul id="java-class-tabs" class="nav nav-tabs">
+            @for( ((codefile : SourceCodeFileView), index) <- problem.getSourceCodeFiles.zipWithIndex ){
+                <li class="@if(index==0){active}">
+                        <a href="#class@index" data-toggle="tab">
+                            <span id="tabForFileId@codefile.getId" class="tab-underline">
+                                @codefile.getTitle
+                            </span>
+                        </a>
+                </li>
+            }<!-- create class tabs -->
+        </ul>
+        @views.html.assignment.editorToolbar()
+    </div>
+
+    <div id="assignment-tab-content" class="tab-content bordered">
+    @for( ((codefile : SourceCodeFileView), index) <- problem.getSourceCodeFiles.zipWithIndex ){
+        <div class="tab-pane @if(index==0){active in}" id="class@index">
+            <div id="editor@index" class="ace-editor-instance" data-file-id="@codefile.getId">@codefile.getSourceCode</div>
+        </div>
+    }
+    </div>
+
+    <div class="ace-editor-console">
+    </div>
+
+    <div class="ace-editor-controls">
+        <button id="run-code-button"           class="btn btn-default btn-primary btn-sm"><span class="fa fa-fw fa-play"></span> Run code</button>
+        <button id="run-tests-button"          class="btn btn-default btn-primary btn-sm"><span class="fa fa-fw fa-check-square-o"></span> Run tests</button>
+        <button id="deliver-assignment-button" class="btn btn-default btn-primary btn-sm pull-right"><span class="fa fa-fw fa-upload"></span> Deliver assignment</button>
+    </div>
+
+</div>

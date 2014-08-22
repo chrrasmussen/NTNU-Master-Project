@@ -1,0 +1,75 @@
+@import "libs/lesshat-prefixed";
+
+@gv-border-radius: 4px;
+
+@gv-border-gray: #ddd;
+@gv-background-gray: #f2f2f2;
+
+@gv-assignment-color: #c4d4ed;
+@gv-assignment-hover-color: #d4e7ff;
+@gv-assignment-progress-color: #428bca;
+@gv-assignment-border-color: #357ebd;
+
+//@gv-assignment-color: #b9d6c3;
+//@gv-assignment-hover-color: #c0e8ce;
+//@gv-assignment-progress-color: #4aac5d;
+//@gv-assignment-border-color: #4aac5d;
+
+.cm-text-outline {
+  text-shadow:
+    0px 1px 0px #000,
+    0px -1px 0px #000,
+    1px 0px 0px #000,
+   -1px 0px 0px #000,
+    0px 1px 1px rgba(0,0,0,0.2),
+    0px -1px 1px rgba(0,0,0,0.2),
+    1px 0px 1px rgba(0,0,0,0.2),
+   -1px 0px 1px rgba(0,0,0,0.2);
+}
+
+.cm-text-shadow{
+  text-shadow:
+    0px 1px 1px rgba(0,0,0,0.4),
+    0px -1px 1px rgba(0,0,0,0.4),
+    1px 0px 1px rgba(0,0,0,0.4),
+   -1px 0px 1px rgba(0,0,0,0.4);
+}
+
+.cm-starred-progress-bar(@position-top) {
+
+  .star-rating {
+    font-size: 18px;
+    position: relative;
+    top: @position-top;
+    .fa-star { margin-right: -8px; }
+    .gold { right: 0; }
+    .silver { right: 25%; }
+    .bronze { right: 50%; }
+
+    .glow{
+      margin-right: -8px;
+      height: 18px;
+      width: 16px;
+      .lh-border-radius(9px);
+    }
+  }
+
+}//end starred-progress-bar
+
+.cm-clearfix {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.cm-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cm-unearned-inset {
+  .lh-box-shadow(inset 1px 2px 2px rgba(0,0,0,.15));
+}

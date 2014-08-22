@@ -1,0 +1,74 @@
+//libs
+@import "libs/lesshat-prefixed";
+@import "libs/boostrap-ms";
+
+//assignment
+@import "assignments/assignment-preview";
+@import "assignments/a-problem";
+@import "assignments/code-editor";
+@import "assignments/assignment-leaderboard";
+
+//progress
+@import "studentProgress/student-progress";
+@import "leaderboards/leaderboards";
+
+//variables and mixins
+@import "custom-mixins";
+
+body {
+  padding-top: 70px;
+  margin: 0px auto 15px auto;
+  max-width: 1170px;
+  background-color: #fefefe;
+}
+
+.container {
+  width: 100%;
+}
+
+.navbar-wrapper{
+  padding: 0 15px;
+}
+
+.navbar {
+  li a{
+    font-family: "Open Sans";
+    font-size: 16px;
+  }
+  .container {
+    max-width: 1170px;
+  }
+  .lh-box-shadow(0px 2px 6px rgba(0,0,0,0.2));
+}
+
+h1, h2, h3, h4, h5{
+  font-family: "Open Sans";
+  font-weight: 300;
+  margin-top: 0;
+}
+
+h1{ font-size: 28px; }
+h2{ font-size: 24px; }
+h3{ font-size: 20px; }
+h4{ font-size: 18px; }
+h5{ font-size: 16px; }
+
+#login-button {
+  width: 100%;
+}
+
+//bootstrap overwrites
+.progress { .cm-unearned-inset; }
+.progress-bar-success{ background-color: @gv-assignment-progress-color; .lh-box-shadow(1px 0px 2px rgba(0,0,0,.15)); }
+
+.tooltip {
+  .tooltip-inner {
+    background: @gv-assignment-progress-color;
+    .lh-box-shadow(2px 2px 6px rgba(0, 0, 0, 0.2));
+  }
+  &.right{
+    .tooltip-arrow {
+      border-right-color: @gv-assignment-progress-color;
+    }
+  }
+}

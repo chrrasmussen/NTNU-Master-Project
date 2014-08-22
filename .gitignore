@@ -1,0 +1,11 @@
+# OS X
+.DS_Store
+
+# Eclipse workspace
+.metadata
+
+# Temp folders
+no.hal.jex.collection/
+Test*/
+Output/
+com.vogella.plugin.first/

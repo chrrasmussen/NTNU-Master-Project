@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file                          controllers.Assets.at(path="/public", file)
+GET        /webjars/*file                         controllers.WebJarAssets.at(file)
+
+
+# Application
+GET        /                                      controllers.MainController.index()
+GET        /javascripts-routes                    controllers.MainController.javascriptRoutes()
+
+GET        /assignments                           controllers.AssignmentController.serveAllAssignments()
+GET        /assignments/:aID/problems/:pID        controllers.AssignmentController.serveProblem(aID : String, pID : String)
+
+GET        /leaderboards                          controllers.LeaderboardsController.serveLeaderboards()
+
+GET        /my-progress                           controllers.MyProgressController.serveStudentProgress()
+
+# WebSockets
+GET        /editor/:pID                           controllers.AssignmentController.openEditorSocket(pID : String)
+
+# Session
+
+GET        /login                                 controllers.LoginController.login()
+POST       /login                                 controllers.LoginController.authenticate()
+GET        /logout                                controllers.LoginController.logout()

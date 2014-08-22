@@ -1,0 +1,13 @@
+@(score : Double)
+<div class="star-rating">
+
+    <i class="fa fa-star bronze @if(score >= 50){star-earned}"></i>
+    <div class="bronze glow @if(score >= 50){star-earned}"></div>
+
+    <i class="fa fa-star silver @if(score >= 75){star-earned}"></i>
+    <div class="silver glow @if(score >= 75){star-earned}"></div>
+
+    <i class="fa fa-star gold @if(score >= 100){star-earned}"></i>
+    <div class="gold glow @if(score >= 100){star-earned}"></div>
+
+</div>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/no.ntnu.assignmentsystem.model/src-gen" modelPluginID="no.ntnu.assignmentsystem.model"
+    redirection="" forceOverwrite="true" modelName="Model" modelPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    classNamePattern="" operationReflection="true" importOrganizing="true">
+  <foreignModel>model.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="no.ntnu.assignmentsystem" disposableProviderFactory="true"
+      ecorePackage="model.ecore#/">
+    <genClasses ecoreClass="model.ecore#//Assignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Assignment/problems"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Assignment/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Assignment/localId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Assignment/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Assignment/deadline"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//Problem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Problem/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Problem/localId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Problem/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Problem/maxPoints"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//CodeProblem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//CodeProblem/repoUrl"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//CodeProblem/sourceCodeFiles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//CodeProblem/mainImplementationFile"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//User">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//User/password"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//ModifiedSourceCodeFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ModifiedSourceCodeFile/sourceCode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ModifiedSourceCodeFile/originalSourceCodeFile"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//Submission">
+      <genTypeParameters ecoreTypeParameter="model.ecore#//Submission/P"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Submission/submittedAt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Submission/problem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Submission/evaluation"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Evaluation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Evaluation/evaluatedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Evaluation/evaluatedAt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Evaluation/awardedPointsFraction"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//CodeSubmission">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//CodeSubmission/sourceCodeFiles"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//UoD">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//UoD/users"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//UoD/courses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//UoD/lastGlobalId"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Student">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Student/submissions"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Student/sourceCodeFiles"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Staff"/>
+    <genClasses image="false" ecoreClass="model.ecore#//Participant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Participant/user"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Participant/screenName"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Course">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Course/assignments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Course/participants"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Course/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Course/title"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//SourceCodeFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//SourceCodeFile/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//SourceCodeFile/filePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//SourceCodeFile/packageName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//SourceCodeFile/visible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//SourceCodeFile/editable"/>
+      <genOperations ecoreOperation="model.ecore#//SourceCodeFile/getSourceCode"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//ImplementationFile"/>
+    <genClasses ecoreClass="model.ecore#//TestFile"/>
+    <genClasses ecoreClass="model.ecore#//JexTestFile"/>
+  </genPackages>
+</genmodel:GenModel>

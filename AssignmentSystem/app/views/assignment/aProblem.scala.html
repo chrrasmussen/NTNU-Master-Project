@@ -1,0 +1,83 @@
+@(assignmentID : String, problemID : String, problem : no.ntnu.assignmentsystem.services.CodeProblemView)
+
+@main("Problem "+assignmentID+problemID){
+
+    <div id="problem-id" data-problemid="@problemID"></div>
+    <div id="problem-score" data-problemscore="50"></div>
+
+    <div class="col-lg-9 hidden-xs">
+
+        <div class="hidden-when-editor-maximized">
+            <h1 class="collapsing-header"><i class="fa fa-fw fa-angle-down"></i>This is assignment @assignmentID. </h1>
+            <div class="collapsible-content">
+                <p>Description of the assignment. </p>
+            </div>
+
+            <h2 class="collapsing-header"><i class="fa fa-fw fa-angle-down"></i>Problems</h2>
+            <div class="collapsible-content">
+                <a href="@controllers.routes.AssignmentController.serveProblem(assignmentID, "a")">
+                    <div class="problem-box @if(problemID == "a"){active-problem}" data-toggle="tooltip" data-placement="right" title="Easy">
+                        A
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" style="width: @{Math.random*100}%"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="@controllers.routes.AssignmentController.serveProblem(assignmentID, "b")">
+                    <div class="problem-box @if(problemID == "b"){active-problem}" data-toggle="tooltip" data-placement="right" title="Easy">
+                        B
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" style="width: @{Math.random*100}%"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="@controllers.routes.AssignmentController.serveProblem(assignmentID, "c")">
+                    <div class="problem-box @if(problemID == "c"){active-problem}" data-toggle="tooltip" data-placement="right" title="Medium">
+                        C
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" style="width: @{Math.random*100}%"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="@controllers.routes.AssignmentController.serveProblem(assignmentID, "d")">
+                    <div class="problem-box @if(problemID == "d"){active-problem}" data-toggle="tooltip" data-placement="right" title="Hard">
+                        D
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" style="width: @{Math.random*100}%"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <script>
+                    $(".problem-box").tooltip();
+                </script>
+
+                <div class="cm-clearfix"></div>
+            </div>
+
+            <h3 class="collapsing-header"><i class="fa fa-fw fa-angle-down"></i>Problem @problemID</h3>
+            <div class="collapsible-content">
+                <p>Problem @problemID is about problem @problemID. </p>
+            </div>
+        </div>
+
+        @views.html.assignment.aceEditor(problem)
+
+    </div>
+
+    <div class="col-lg-3 hidden-when-editor-maximized">
+        @views.html.assignment.assignmentLeaderboard(assignmentID)
+    </div>
+
+    @views.html.assignment.testModal()
+
+    <script type="text/javascript" src="@routes.WebJarAssets.at(WebJarAssets.locate("/src-min/ace.js"))"></script>
+    <script type="text/javascript" src="@routes.WebJarAssets.at(WebJarAssets.locate("/src-min/ext-language_tools.js"))"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascript/plugins/jquery-collapsible.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascript/plugins/bootstrap-tab-slider.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascript/plugins/jwerty.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascript/editor.js")"></script>
+}
