@@ -97,18 +97,18 @@ These steps must be performed every time the source code in ```no.ntnu.assignmen
 2. Select "Java" > "Runnable JAR file"
 3. Click "Next"
 4. Set launch configuration to "Main"
-5. Set export destination to ```<projectDir>/AssignmentModel/lib/no.ntnu.assignmentsystem.model.jar``` (Folder must be created)
+5. Set export destination to ```<projectDir>/AssignmentSystem/lib/no.ntnu.assignmentsystem.model.jar``` (Folder must be created)
 6. Set library handling to "Copy required libraries into a sub-folder next to the generated JAR"
 7. Click "Finish"
-8. Move the JAR-files from ```<projectDir>/AssignmentModel/lib/no.ntnu.assignmentsystem.model_lib/``` to ```<projectDir>/AssignmentModel/lib/```
+8. Move the JAR-files from ```<projectDir>/AssignmentSystem/lib/no.ntnu.assignmentsystem.model_lib/``` to ```<projectDir>/AssignmentSystem/lib/```
 
 These steps must be performed every time the code in ```no.ntnu.assignmentsystem.model``` changes.
 
 ### Run the project
 
 1. Move the TDT4100 problems from ```<downloads>/jexercise-master/no.hal.jex.collection/``` to ```<projectDir>/no.hal.jex.collection/```
-2. Move the files from ```<downloads>/activator-1.2.10-minimal/``` to ```<projectDir>/AssignmentModel/```
-3. Open terminal and navigate to ```<projectDir>/AssignmentModel/```
+2. Move the files from ```<downloads>/activator-1.2.10-minimal/``` to ```<projectDir>/AssignmentSystem/```
+3. Open terminal and navigate to ```<projectDir>/AssignmentSystem/```
 4. Run ```./activator run```
 5. Open web browser and navigate to: http://localhost:9000
 
