@@ -40,9 +40,9 @@ Master's thesis by Christian Rasmussen and David Åse.
 5. Complete the wizard
 6. Restart Eclipse when prompted
 
-The Maven command line tool (```mvn```) can be installed using ```brew install maven``` on Mac OS X.
-
 ### Installing Akka dependencies into Eclipse
+
+The Maven command line tool (```mvn```) can be installed using ```brew install maven``` on Mac OS X.
 
 1. Open terminal and navigate to ```<projectDir>/Setup``` folder
 2. Run ```mvn p2:site``` (https://github.com/reficio/p2-maven-plugin)
@@ -64,14 +64,13 @@ The Maven command line tool (```mvn```) can be installed using ```brew install m
 3. Click on "Generate Model Code"
 4. Repeat for ```no.ntnu.assignmentsystem.model/model/services.genmodel```
 
-### Create a Run configuration
+These steps must be performed every time the ```.ecore``` model changes.
 
-1. Open "Run" > "Run Configurations" in menu bar
-2. Right-click "Java Application" and select "New"
-3. Set name to ```Main```
-4. Set project to ```no.ntnu.assignmentsystem.model```
-5. Set main class to ```no.ntnu.assignmentsystem.services.Main```
-6. Click "Run" and confirm that it compiles
+### Update path to Eclipse install
+
+1. Open the source file ```no.ntnu.assignmentsystem.model/src/no.ntnu.assignmentsystem.services/EditorActor.java```
+2. Go to line 45
+3. Update the path to match the current installation: ```<eclipseInstall>/plugins/org.eclipse.equinox.launcher_1.3.0.<version>.jar```
 
 ### Exporting the editor plugin
 
@@ -81,11 +80,16 @@ The Maven command line tool (```mvn```) can be installed using ```brew install m
 4. Set directory to ```<eclipseInstall>/dropins/```
 5. Click "Finish"
 
-### Update path to Eclipse install
+These steps must be performed every time the source code in ```no.ntnu.assignmentsystem.editor``` changes.
 
-1. Open the source file ```no.ntnu.assignmentsystem.model/src/no.ntnu.assignmentsystem.services/EditorActor.java```
-2. Go to line 45
-3. Update the path to match the current installation: ```<eclipseInstall>/plugins/org.eclipse.equinox.launcher_1.3.0.<version>.jar```
+### Create a Run configuration
+
+1. Open "Run" > "Run Configurations" in menu bar
+2. Right-click "Java Application" and select "New"
+3. Set name to ```Main```
+4. Set project to ```no.ntnu.assignmentsystem.model```
+5. Set main class to ```no.ntnu.assignmentsystem.services.Main```
+6. Click "Run" and confirm that it compiles
 
 ### Exporting to JAR
 
@@ -97,6 +101,8 @@ The Maven command line tool (```mvn```) can be installed using ```brew install m
 6. Set library handling to "Copy required libraries into a sub-folder next to the generated JAR"
 7. Click "Finish"
 8. Move the JAR-files from ```<projectDir>/AssignmentModel/lib/no.ntnu.assignmentsystem.model_lib/``` to ```<projectDir>/AssignmentModel/lib/```
+
+These steps must be performed every time the code in ```no.ntnu.assignmentsystem.model``` changes.
 
 ### Run the project
 
